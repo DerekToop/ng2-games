@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'src/scss/_variables.scss';
+@import 'src/scss/_mixins.scss';
+
+// @import 'src/scss/_sample.scss';
+
+.block {
+  display: block;
+}
