@@ -15,6 +15,14 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "paths": {
+      "@puzzle/*": ["src/app/modules/puzzle/*"],
+      "@tetris/*": ["src/app/modules/tetris/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@core/*":   ["src/app/core/*"],
+      "@modules/*": ["src/app/modules/*"],
+      "@env/*": ["src/environments/environment"]
+    },
     "lib": [
       "es2018",
       "dom"
