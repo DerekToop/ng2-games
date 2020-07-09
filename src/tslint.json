@@ -5,12 +5,16 @@
       true,
       "attribute",
       "app",
+      "tetris",
+      "puzzle",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
       "app",
+      "tetris",
+      "puzzle",
       "kebab-case"
     ]
   }

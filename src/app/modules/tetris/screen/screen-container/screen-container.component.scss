@@ -1,0 +1,24 @@
+.d-screen-container {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border: 2px solid #a000ff;
+  margin: 10px;
+  width: 50%;
+  height: 560px;
+  background: url(https://derekji.github.io/ts-tetris/assets/images/bg11.jpg) no-repeat;
+  text-align: left;
+}
+
+app-base-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(https://derekji.github.io/ts-tetris/assets/images/tetris_grid.gif) repeat;
+}
+
+app-active-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
