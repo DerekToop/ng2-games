@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ControlPanelComponent } from './control-panel/control-panel.component';
+import { ControlPanelComponent } from './control-panel.component';
 
 
 
 @NgModule({
   declarations: [ControlPanelComponent],
+  exports: [ControlPanelComponent],
   imports: [
     CommonModule
   ]
