@@ -16,6 +16,10 @@
       "node_modules/@types"
     ],
     "paths": {
+      "@tetris-shared/*": ["src/app/modules/tetris/shared/*"],
+      "@tetris-core/*": ["src/app/modules/tetris/core/*"],
+      "@puzzle-shared/*": ["src/app/modules/puzzle/shared/*"],
+      "@puzzle-core/*": ["src/app/modules/puzzle/core/*"],
       "@puzzle/*": ["src/app/modules/puzzle/*"],
       "@tetris/*": ["src/app/modules/tetris/*"],
       "@shared/*": ["src/app/shared/*"],

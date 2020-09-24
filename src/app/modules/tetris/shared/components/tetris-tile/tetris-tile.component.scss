@@ -1,0 +1,10 @@
+@import '../../styles/index.scss';
+
+div.tetris-tile {
+  margin: 0px;
+  padding: 0px;
+  width: $tile-size;
+  height: $tile-size;
+  position: absolute;
+  background: url(https://derekji.github.io/ts-tetris/assets/images/tetris.gif) no-repeat;
+}
