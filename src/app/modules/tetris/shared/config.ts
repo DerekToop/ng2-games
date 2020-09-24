@@ -1,6 +1,11 @@
-export const TetrisConfig = {
-  // Tile
-  tileSize: 28,
+const tileConfigs = {
+  size: 28,
+  colorId: 0,
+  iconId: 0,
+}
+
+export const DefaultTetrisConfigs = {
+  tile: tileConfigs,
 
   // Matrix
   matrixRows: 20,

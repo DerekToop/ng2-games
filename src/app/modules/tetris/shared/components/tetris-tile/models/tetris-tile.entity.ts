@@ -1,5 +1,5 @@
 import { ITileOptions } from "../models/tile-options.interface";
-import { TetrisConfig } from '../config';
+import { DefaultTetrisConfigs } from '../config';
 import { TetrisMatrix } from "../models/tetris-matrix.type";
 
 export class TetrisTile {
@@ -22,7 +22,7 @@ export class TetrisTile {
       iconId: 0,
       top: 0,
       left: 0,
-      width: TetrisConfig.tileSize,
+      size: DefaultTetrisConfigs.tileSize,
     }
   }
 
@@ -31,8 +31,8 @@ export class TetrisTile {
    * @param matrix Tetrix Matrix
    */
   occupyCell(matrix: TetrisMatrix) {
-    const x = Math.floor(this.options.left / this.options.width);
-    const y = Math.floor(this.options.top / this.options.width);
+    const x = Math.floor(this.options.left / this.options.size);
+    const y = Math.floor(this.options.top / this.options.size);
     const cellVal = this.options.colorId;
 
     matrix[y][x] = cellVal;
@@ -43,8 +43,8 @@ export class TetrisTile {
    */
   getHtml() {
     const imgPoint = {x: 0, y: 0};
-    imgPoint.x = 0 - this.options.colorId * this.options.width;
-    imgPoint.y = 0 - this.options.iconId * this.options.width;
+    imgPoint.x = 0 - this.options.colorId * this.options.size;
+    imgPoint.y = 0 - this.options.iconId * this.options.size;
 
     let styleStr: string = ''; // $('#tile-template-html').html();
     // styleStr = styleStr.replace(/_TOP_/g,  this.options.top.toString() );
