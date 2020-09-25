@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { TileService } from '@core/services/tile.service';
 import { DefaultTetrisConfigs } from '@tetris-shared/config';
 import { map } from 'rxjs/operators';
+import { ITileOptions } from './models/tile-options.interface';
 
 @Component({
   selector: 'app-tetris-tile',
@@ -52,10 +53,19 @@ export class TetrisTileComponent implements OnInit {
     );
   }
 
-  //#region: Input Tile Options
-  @Input() colorId?: number = DefaultTetrisConfigs.tile.colorId;
-  @Input() top: number = 0;
-  @Input() left: number = 0;
+  //#region: Tile Options
+  @Input() options: ITileOptions = {
+    colorId: DefaultTetrisConfigs.tile.colorId,
+    size: DefaultTetrisConfigs.tile.size,
+    iconId: DefaultTetrisConfigs.tile.iconId,
+    top: 0,
+    left: 0,
+  };
+
+  
+  get colorId() { return this.options?.colorId; }
+  get top() { return this.options?.top; }
+  get left() { return this.options?.left; }
   //#endregion
 
   /**

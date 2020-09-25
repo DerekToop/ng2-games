@@ -11,12 +11,12 @@ import { ITileConfigs } from '@tetris-shared/components/tetris-tile/models/tile-
 })
 export class TileService {
 
-  private configs: ITileConfigs = {
+  private _configs: ITileConfigs = {
     size: DefaultTetrisConfigs.tile.size,
     iconId: DefaultTetrisConfigs.tile.iconId,
   };
 
-  private configsSubject: BehaviorSubject<ITileConfigs> = new BehaviorSubject(this.configs);
+  private configsSubject: BehaviorSubject<ITileConfigs> = new BehaviorSubject(this._configs);
 
   constructor() { }
 
@@ -25,6 +25,13 @@ export class TileService {
    */
   get configs$(): Observable<ITileConfigs> {
     return this.configsSubject.asObservable();
+  }
+
+  /**
+   * 
+   */
+  get configs(): ITileConfigs {
+    return Object.assign({}, this._configs);
   }
 
   /**
@@ -51,12 +58,12 @@ export class TileService {
    * @param configs Optional parameter with expected config values
    */
   resetConfigs(configs?: ITileConfigs) {
-    this.configs = {
-      size: configs?.size || this.configs.size,
-      iconId: configs?.iconId || this.configs.iconId,
+    this._configs = {
+      size: configs?.size || this._configs.size,
+      iconId: configs?.iconId || this._configs.iconId,
     };
 
-    this.configsSubject.next(this.configs);
+    this.configsSubject.next(this._configs);
   }
 
 
@@ -65,8 +72,8 @@ export class TileService {
    * @param iconId number: the expected icon's Id
    */
   setIcon(iconId: number): void {
-    this.configs.iconId = iconId || this.configs.iconId;
-    this.resetConfigs(this.configs);
+    this._configs.iconId = iconId || this._configs.iconId;
+    this.resetConfigs(this._configs);
   }
 
   /**
@@ -74,8 +81,8 @@ export class TileService {
    * @param size number: the expected tile size
    */
   setSize(size: number): void {
-    this.configs.size = size || this.configs.size;
-    this.resetConfigs(this.configs);
+    this._configs.size = size || this._configs.size;
+    this.resetConfigs(this._configs);
   }
 
   /**
