@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { TileService } from '@core/services/tile.service';
 import { DefaultTetrisConfigs } from '@tetris-shared/config';
 import { map } from 'rxjs/operators';
+import { ITileConfigs } from './models/tile-configs.interface';
 import { ITileOptions } from './models/tile-options.interface';
 
 @Component({
@@ -40,8 +41,14 @@ export class TetrisTileComponent implements OnInit {
    */
   get styles$() {
     return this.service.configs$.pipe(
-      map((configs) => {
-        const bp = this.backgroundPosition(configs.size, configs.iconId, this.colorId);
+      map((configs: ITileConfigs) => {
+        return this.getStyles(configs);
+      })
+    );
+  }
+
+  getStyles(configs: ITileConfigs) {
+    const bp = this.backgroundPosition(configs.size, configs.iconId, this.colorId);
         const bpx = this.backgroundPositionX(bp);
         const bpy = this.backgroundPositionY(bp);
         return {
@@ -49,8 +56,6 @@ export class TetrisTileComponent implements OnInit {
           'left': `${this.left}px`,
           'background-position': `${bpx}px ${bpy}px`
         }
-      })
-    );
   }
 
   //#region: Tile Options
@@ -62,7 +67,7 @@ export class TetrisTileComponent implements OnInit {
     left: 0,
   };
 
-  
+
   get colorId() { return this.options?.colorId; }
   get top() { return this.options?.top; }
   get left() { return this.options?.left; }

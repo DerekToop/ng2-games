@@ -1,6 +1,11 @@
+@import '../info-center.common.scss';
+
 .preview-next {
-  border: 2px solid #a000ff;
-  width: 132px;
+  width: 100%;
   height: 132px;
-  background-color: #a0c0ff;
+
+  app-tetris-shape {
+    display: inline-block;
+    position: relative;
+  }
 }

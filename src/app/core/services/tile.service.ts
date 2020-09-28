@@ -3,7 +3,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { DefaultTetrisConfigs } from '@tetris-shared/config';
-import { TetrisTile } from '@tetris-shared/entities/tetris-tile.entity';
 import { ITileConfigs } from '@tetris-shared/components/tetris-tile/models/tile-configs.interface';
 
 @Injectable({
@@ -28,7 +27,7 @@ export class TileService {
   }
 
   /**
-   * 
+   *
    */
   get configs(): ITileConfigs {
     return Object.assign({}, this._configs);
@@ -90,7 +89,7 @@ export class TileService {
    *
    * @param tile TetrisTile
    */
-  sendToBackground(tile: TetrisTile) {
+  // sendToBackground(tile: TetrisTile) {
 
-  }
+  // }
 }

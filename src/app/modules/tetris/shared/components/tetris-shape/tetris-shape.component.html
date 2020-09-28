@@ -1,4 +1,4 @@
-<div class="tetris-shape" [ngStyle]="styles">
+<div class="tetris-shape" >
     <ng-container *ngIf="tiles$ | async as tiles">
         <ng-container *ngFor="let tile of tiles">
             <app-tetris-tile [options]="tile"></app-tetris-tile>

@@ -18,11 +18,12 @@ export class TetrisShapeComponent implements OnInit, OnDestroy {
 
   @Input() type: number = 0;
   @Input() direction: number = 0;
-  @Input() top: number;
-  @Input() left: number;
+  @Input() top: number = 0;
+  @Input() left: number = 0;
+  @Input() color: number = 0;
 
-  shape = shapes[this.type];
-  shapeSnapshot = this.shape[this.direction];
+  shape: number[];
+  shapeSnapshot: number;
 
   private _tiles: Array<ITileOptions> = [];
 
@@ -36,7 +37,10 @@ export class TetrisShapeComponent implements OnInit, OnDestroy {
 
   protected buildTiles(tileConfigs: ITileConfigs): Array<ITileOptions> {
     this._tiles = [];
-    
+
+    this.shape = shapes[this.type];
+    this.shapeSnapshot = this.shape[this.direction];
+
     const numberOfTiles = DefaultTetrisConfigs.shape.numberOfTiles;
     const unitArray = [];
     const binstr = hex2binstr(this.shapeSnapshot.toString(), 16);
@@ -55,7 +59,7 @@ export class TetrisShapeComponent implements OnInit, OnDestroy {
             top: tileTop,
             iconId: tileConfigs.iconId,
             size: tileConfigs.size,
-            colorId: tileConfigs.iconId,    
+            colorId: this.color,
           };
           this._tiles.push(tile);
         }
