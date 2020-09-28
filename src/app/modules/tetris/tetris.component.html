@@ -1,7 +1,71 @@
-<div id="tetris-game" class="d-flex p-2">
-  <app-screen-container class="game-flex-col"></app-screen-container>
-  <div class="game-flex-col ml-auto p-1">
-    <app-info-center></app-info-center>
-    <app-control-panel></app-control-panel>
+<div id="tetris-game" class="d-flex p-2 flex-column">
+  <div class="upper-zone d-flex">
+    <app-screen-container class="game-flex-col"></app-screen-container>
+    <div class="game-flex-col ml-auto p-1">
+      <app-info-center></app-info-center>
+      <app-control-panel></app-control-panel>
+    </div>
+  </div>
+
+  <div class="lower-zone d-flex justify-content-around">
+
+    <div class="lower-half">
+      <div class="row d-flex justify-content-around">
+        <div>
+          <span class="round-btn bg-danger"></span>
+          <span>RESET</span>
+        </div>
+        <div>
+          <span class="round-btn bg-warning">
+          </span>
+          <span>PAUSE</span>
+        </div>
+        <div>
+          <span class="round-btn bg-success">
+          </span>
+          <span>START</span>
+        </div>
+      </div>
+
+      <div class="row m-3 d-flex justify-content-around">
+        <div>
+          <span class="round-btn bg-secondary round-btn-large"></span>
+          <span>DROP DOWN</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lower-half">
+      <div class="row d-flex justify-content-around">
+        <div>
+          <span class="round-btn round-btn-medium bg-secondary p-4">
+            <i class="fa fa-rotate-left"></i>
+          </span>
+          <span>ROTATE</span>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-around">
+        <div>
+          <span class="round-btn round-btn-medium bg-secondary p-4">
+            <i class="fa fa-arrow-left"></i>
+          </span>
+          <span>MOVE LEFT</span>
+        </div>
+        <div>
+          <span class="round-btn round-btn-medium bg-secondary p-4">
+            <i class="fa fa-arrow-right"></i>
+          </span>
+          <span>MOVE RIGHT</span>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-around">
+        <div>
+          <span class="round-btn round-btn-medium bg-secondary p-4">
+            <i class="fa fa-arrow-down"></i>
+          </span>
+          <span>MOVE DOWN</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,12 +1,28 @@
+@import './shared/styles/_button';
+
 #tetris-game {
   position: relative;
   background-color: #a0d0ff;
   border: 1px dashed #a000ff;
   width: 570px;
-  height: 582px;
+  height: 920px;
   margin: 0 auto;
 }
 
 .game-flex-col {
   width: 46%;
+}
+
+.upper-zone {
+  height: 586px;
+}
+
+.lower-half {
+  width: 50%;
+}
+
+.round-btn {
+  .fa {
+    font-size: 1.8rem;
+  }
 }
